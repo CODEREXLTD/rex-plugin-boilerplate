@@ -1,0 +1,15 @@
+{
+    "name": "rextheme/plugin_name",
+    "authors": [
+        {
+            "name": "RexTheme",
+            "email": "support@rextheme.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "RexTheme\\PluginName\\": "includes/"
+        }
+    }
+}
