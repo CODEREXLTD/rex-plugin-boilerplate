@@ -125,7 +125,7 @@ final class PluginName {
         define( 'PLUGIN_NAME_DIR', __DIR__ );
         define( 'PLUGIN_NAME_PATH', dirname( PLUGIN_NAME_FILE ) );
         define( 'PLUGIN_NAME_INCLUDES', PLUGIN_NAME_PATH . '/includes' );
-        define( 'PLUGIN_NAME_TEMPLATE_PATH', PLUGIN_NAME_PATH . '/templates' );
+        define( 'PLUGIN_NAME_TEMPLATE_PATH', PLUGIN_NAME_PATH . '/views' );
         define( 'PLUGIN_NAME_URL', plugins_url( '', PLUGIN_NAME_FILE ) );
         define( 'PLUGIN_NAME_BUILD', PLUGIN_NAME_URL . '/build' );
         define( 'PLUGIN_NAME_ASSETS', PLUGIN_NAME_URL . '/assets' );

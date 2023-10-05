@@ -22,6 +22,8 @@ node_modules
 svn/*
 dist/
 assets/*
+!src/assets
+!includes/Assets
 !assets/index.php
 package-lock.json
 app/Views/public/Js/*

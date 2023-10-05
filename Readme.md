@@ -10,5 +10,7 @@ The Boilerplate can be installed directly into your plugins folder "as-is". You 
 
 * Copy plugin_name to your plugin's directory and rename it to your plugin's name
 * Perform a find and replace at the project level as follows:
-  1. Find the text `plugin_name` and replace with `your-plugin-name` in all files
-  2. Find the text `PLUGIN_NAME` and replace with `PLUGIN_NAME` in all files
+  1. Rename the folder name and main file name. Also update the plugin info on plugin's main file
+  2. Find the text `plugin_domain` and replace with your preferred domain name
+  3. Change the const variable if you want from plugin.php file
+  5. Find the text `RexTheme\PluginName` and replace with your preferred name space
