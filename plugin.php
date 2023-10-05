@@ -208,6 +208,8 @@ final class PluginName {
         if ( $this->is_request( 'admin' ) ) {
             $this->container['admin_menu'] = new RexTheme\PluginName\Admin\Menu();
         }
+
+        $this->container['rest_api'] = new RexTheme\PluginName\REST\Api();
     }
 
     /**

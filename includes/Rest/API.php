@@ -31,7 +31,7 @@ class Api {
         $this->class_map = apply_filters(
             'plugin_name_rest_api_class_map',
             [
-                \Akash\JobPlace\REST\JobTypesController::class,
+                \RexTheme\PluginName\REST\PluginController::class,
             ]
         );
 
