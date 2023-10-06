@@ -13,3 +13,8 @@
         name: "dashboard-page",
     };
 </script>
+
+<style lang="scss">
+    /* Include the global SCSS file */
+    @import './src/scss/admin/app';
+</style>

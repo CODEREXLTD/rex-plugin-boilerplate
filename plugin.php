@@ -129,7 +129,7 @@ final class PluginName {
         define( 'PLUGIN_NAME_URL', plugins_url( '', PLUGIN_NAME_FILE ) );
         define( 'PLUGIN_NAME_BUILD', PLUGIN_NAME_URL . '/build' );
         define( 'PLUGIN_NAME_ASSETS', PLUGIN_NAME_URL . '/assets' );
-        define( 'PLUGIN_NAME_DEVELOPMENT', 'yes' );
+        define( 'PLUGIN_NAME_PRODUCTION', 'yes' );
     }
 
     /**
