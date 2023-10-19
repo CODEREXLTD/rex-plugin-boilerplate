@@ -16,7 +16,7 @@ class Keys {
      *
      * @since 1.0.0
      */
-    const PLUGIN_NAME_INSTALLED = 'plugin_name_installed';
+    const _PLUGIN_NAME_INSTALLED = 'plugin_name_installed';
 
     /**
      * Plugin version key.
@@ -25,7 +25,7 @@ class Keys {
      *
      * @since 1.0.0
      */
-    const PLUGIN_NAME_VERSION = 'plugin_name_version';
+    const _PLUGIN_NAME_VERSION = 'plugin_name_version';
 
     /**
      * Plugin seeder ran key.
@@ -34,7 +34,7 @@ class Keys {
      *
      * @since 1.0.0
      */
-    const PLUGIN_NAME_SEEDER_RAN = 'plugin_name_type_seeder_ran';
+    const _PLUGIN_NAME_SEEDER_RAN = 'plugin_name_type_seeder_ran';
 
     /**
      * Plugin ran key.
@@ -43,5 +43,5 @@ class Keys {
      *
      * @since 1.0.0
      */
-    const PLUGIN_NAME_RAN = 'plugin_name_job_seeder_ran';
+    const _PLUGIN_NAME_RAN = 'plugin_name_job_seeder_ran';
 }

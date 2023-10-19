@@ -120,17 +120,17 @@ final class PluginName {
      * @return void
      */
     public function define_constants() {
-        define( 'PLUGIN_NAME_VERSION', self::VERSION );
-        define( 'PLUGIN_NAME_SLUG', self::SLUG );
-        define( 'PLUGIN_NAME_FILE', __FILE__ );
-        define( 'PLUGIN_NAME_DIR', __DIR__ );
-        define( 'PLUGIN_NAME_PATH', dirname( PLUGIN_NAME_FILE ) );
-        define( 'PLUGIN_NAME_INCLUDES', PLUGIN_NAME_PATH . '/includes' );
-        define( 'PLUGIN_NAME_TEMPLATE_PATH', PLUGIN_NAME_PATH . '/views' );
-        define( 'PLUGIN_NAME_URL', plugins_url( '', PLUGIN_NAME_FILE ) );
-        define( 'PLUGIN_NAME_BUILD', PLUGIN_NAME_URL . '/build' );
-        define( 'PLUGIN_NAME_ASSETS', PLUGIN_NAME_URL . '/assets' );
-        define( 'PLUGIN_NAME_PRODUCTION', 'yes' );
+        define( '_PLUGIN_NAME_VERSION', self::VERSION );
+        define( '_PLUGIN_NAME_SLUG', self::SLUG );
+        define( '_PLUGIN_NAME_FILE', __FILE__ );
+        define( '_PLUGIN_NAME_DIR', __DIR__ );
+        define( '_PLUGIN_NAME_PATH', dirname( _PLUGIN_NAME_FILE ) );
+        define( '_PLUGIN_NAME_INCLUDES', _PLUGIN_NAME_PATH . '/includes' );
+        define( '_PLUGIN_NAME_TEMPLATE_PATH', _PLUGIN_NAME_PATH . '/views' );
+        define( '_PLUGIN_NAME_URL', plugins_url( '', _PLUGIN_NAME_FILE ) );
+        define( '_PLUGIN_NAME_BUILD', _PLUGIN_NAME_URL . '/build' );
+        define( '_PLUGIN_NAME_ASSETS', _PLUGIN_NAME_URL . '/assets' );
+        define( '_PLUGIN_NAME_PRODUCTION', 'yes' );
     }
 
     /**
@@ -253,12 +253,12 @@ final class PluginName {
      * @return void
      */
     public function localization_setup() {
-        load_plugin_textdomain( 'plugin_name', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain( 'the-plugin-name-text-domain', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
         // Load the React-pages translations.
         if ( is_admin() ) {
             // Load wp-script translation for plugin-name-app
-            wp_set_script_translations( 'plugin-name-app', 'plugin_name', plugin_dir_path( __FILE__ ) . 'languages/' );
+            wp_set_script_translations( 'plugin-name-app', 'the-plugin-name-text-domain', plugin_dir_path( __FILE__ ) . 'languages/' );
         }
     }
 
@@ -300,8 +300,8 @@ final class PluginName {
      * @return array
      */
     public function plugin_action_links( $links ) {
-        $links[] = '<a href="' . admin_url( 'admin.php?page=plugin_name#/settings' ) . '">' . __( 'Settings', 'plugin_name' ) . '</a>';
-        $links[] = '<a href="https://github.com/ManiruzzamanAkash/wp-react-kit#quick-start" target="_blank">' . __( 'Documentation', 'plugin_name' ) . '</a>';
+        $links[] = '<a href="' . admin_url( 'admin.php?page=plugin_name#/settings' ) . '">' . __( 'Settings', 'the-plugin-name-text-domain' ) . '</a>';
+        $links[] = '<a href="#" target="_blank">' . __( 'Documentation', 'the-plugin-name-text-domain' ) . '</a>';
 
         return $links;
     }

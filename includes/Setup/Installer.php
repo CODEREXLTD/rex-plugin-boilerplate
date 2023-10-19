@@ -29,11 +29,11 @@ class Installer {
      * @return void
      */
     public function add_version(): void {
-        $installed = get_option( Keys::PLUGIN_NAME_INSTALLED );
+        $installed = get_option( Keys::_PLUGIN_NAME_INSTALLED );
         if ( ! $installed ) {
-            update_option( Keys::PLUGIN_NAME_INSTALLED, time() );
+            update_option( Keys::_PLUGIN_NAME_INSTALLED, time() );
         }
-        update_option( Keys::PLUGIN_NAME_VERSION, PLUGIN_NAME_VERSION );
+        update_option( Keys::_PLUGIN_NAME_VERSION, _PLUGIN_NAME_VERSION );
     }
 
 
