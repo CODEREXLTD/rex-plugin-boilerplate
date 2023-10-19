@@ -1,16 +1,17 @@
 <?php
 
 /**
- * Plugin Name:       Plugin Boilerplate
- * Description:       A simple starter kit to work in WordPress plugin development using WordPress Rest API, WP-script and many more...
- * Requires at least: 5.8
- * Requires PHP:      7.4
- * Version:           1.0.0
- * Tested upto:       6.2.2
- * Author:            RexTheme
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       plugin_name
+ * Plugin Name:     {{The Plugin Name}}
+ * Plugin URI:      {{plugin_url}}
+ * Description:     {{plugin_description}}
+ * Version:         {{version}}
+ * Author:          {{author_name}}
+ * Author URI:      {{author_url}}
+ * Text Domain:     the-plugin-name-text-domain
+ * Domain Path:     /languages
+ * Requires PHP:    7.1
+ * Requires WP:     5.5.0
+ * Namespace:       ThePluginName
  */
 
 defined( 'ABSPATH' ) || exit;
