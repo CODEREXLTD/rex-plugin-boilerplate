@@ -14,7 +14,10 @@
     "dev": "node src/env/development_mode.js && vite",
     "watch": "npm run dev",
     "build": "node src/env/production_mode.js && vite build",
-    "production": "npm run build"
+    "production": "npm run build",
+    "test:php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/rex_plugin_boilerplate/phpunit.xml.dist --verbose'",
+    "test:watch": "npm run composer test:watch",
+    "composer": "wp-env run cli --env-cwd=wp-content/plugins/rex_plugin_boilerplate composer"
   },
   "dependencies": {
     "@wordpress/hooks": "^3.1.1",
@@ -33,6 +36,7 @@
     "@vitejs/plugin-vue": "^3.1.0",
     "@vue/compiler-sfc": "^3.2.20",
     "@wordpress/api-fetch": "^6.41.0",
+    "@wordpress/env": "^5.7.0",
     "@wordpress/scripts": "^26.15.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",

@@ -25,5 +25,8 @@
         "wp-phpunit/wp-phpunit": "^6.3",
         "yoast/phpunit-polyfills": "^2.0",
         "phpunit/phpunit": "^9.6"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
