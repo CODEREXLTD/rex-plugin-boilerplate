@@ -160,7 +160,7 @@ final class PluginName {
      * @return void
      */
     public function activate() {
-        // Run the installer to create necessary migrations and seeders.
+        // Run the installer to create necessary migrations.
 //        $this->install();
     }
 
@@ -241,6 +241,7 @@ final class PluginName {
      */
     public function init_classes() {
         // Init necessary hooks
+        new RexTheme\PluginName\Hooks\Common();
     }
 
     /**
