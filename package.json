@@ -17,7 +17,8 @@
     "production": "npm run build",
     "test:php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/rex_plugin_boilerplate/phpunit.xml.dist --verbose'",
     "test:watch": "npm run composer test:watch",
-    "composer": "wp-env run cli --env-cwd=wp-content/plugins/rex_plugin_boilerplate composer"
+    "composer": "wp-env run cli --env-cwd=wp-content/plugins/rex_plugin_boilerplate composer",
+    "test:e2e:playwright": "wp-scripts test-playwright"
   },
   "dependencies": {
     "@wordpress/hooks": "^3.1.1",
