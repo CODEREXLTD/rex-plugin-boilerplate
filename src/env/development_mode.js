@@ -6,9 +6,9 @@ glob("plugin.php", function(err, files) {
         files.forEach(function(item, index, array) {
             const data = fs.readFileSync(item, 'utf8');
             const mapObj = {
-                PLUGIN_NAME_PRODUCTION: "PLUGIN_NAME_DEVELOPMENT"
+                _PLUGIN_NAME_PRODUCTION: "_PLUGIN_NAME_DEVELOPMENT"
             };
-            const result = data.replace(/PLUGIN_NAME_PRODUCTION/gi, function (matched) {
+            const result = data.replace(/_PLUGIN_NAME_PRODUCTION/gi, function (matched) {
                 return mapObj[matched];
             });
             fs.writeFile(item, result, 'utf8', function (err) {

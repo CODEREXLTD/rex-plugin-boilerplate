@@ -26,7 +26,7 @@ class Menu {
     public function init_menu() {
         global $submenu;
 
-        $slug          = PLUGIN_NAME_SLUG;
+        $slug          = _PLUGIN_NAME_SLUG;
         $menu_position = 50;
         $capability    = 'manage_options';
 
@@ -49,6 +49,6 @@ class Menu {
     public function plugin_page() {
         $assets   = new LoadAssets();
         $assets->admin();
-        require_once PLUGIN_NAME_TEMPLATE_PATH . '/app.php';
+        require_once _PLUGIN_NAME_TEMPLATE_PATH . '/app.php';
     }
 }

@@ -128,7 +128,7 @@ class Vite
 
     public static function isDevMode(): bool
     {
-        return defined('PLUGIN_NAME_DEVELOPMENT') && PLUGIN_NAME_DEVELOPMENT === 'yes';
+        return defined('_PLUGIN_NAME_DEVELOPMENT') && _PLUGIN_NAME_DEVELOPMENT === 'yes';
     }
 
     private static function getDevPath(): string
