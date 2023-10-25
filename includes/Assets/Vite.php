@@ -138,7 +138,7 @@ class Vite
 
     private static function getAssetPath(): string
     {
-        return PLUGIN_NAME_ASSETS;
+        return _PLUGIN_NAME_ASSETS;
     }
 
     private static function getProductionFilePath($file): string
