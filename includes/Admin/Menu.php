@@ -30,7 +30,7 @@ class Menu {
         $menu_position = 50;
         $capability    = 'manage_options';
 
-        add_menu_page( esc_attr__( 'Plugin Name', 'the-plugin-name-text-domain' ), esc_attr__( 'Plugin Name', 'the-plugin-name-text-domain' ), $capability, $slug, [ $this, 'plugin_page' ], '', $menu_position );
+        add_menu_page( esc_attr__( '{{The Plugin Name}}', 'the-plugin-name-text-domain' ), esc_attr__( '{{The Plugin Name}}', 'the-plugin-name-text-domain' ), $capability, $slug, [ $this, 'plugin_page' ], '', $menu_position );
 
         if ( current_user_can( $capability ) ) {
             $submenu[ $slug ][] = [ esc_attr__( 'Home', 'the-plugin-name-text-domain' ), $capability, 'admin.php?page=' . $slug . '#/' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
