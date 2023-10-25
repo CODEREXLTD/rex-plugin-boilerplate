@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\Assets;
+namespace RexTheme\ThePluginName\Assets;
 
 class LoadAssets
 {
@@ -8,5 +8,5 @@ class LoadAssets
     {
         Vite::enqueueScript('plugin-name-script-boot', 'admin/start.js', array('jquery'), _PLUGIN_NAME_VERSION, true);
     }
-  
+
 }

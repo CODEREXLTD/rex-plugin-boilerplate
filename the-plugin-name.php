@@ -17,7 +17,7 @@
 defined( 'ABSPATH' ) || exit;
 
 
-final class PluginName {
+final class ThePluginName {
     /**
      * Plugin version.
      *
@@ -70,13 +70,13 @@ final class PluginName {
      *
      * @since 1.0.0
      *
-     * @return PluginName|bool
+     * @return ThePluginName|bool
      */
     public static function init() {
         static $instance = false;
 
         if ( ! $instance ) {
-            $instance = new PluginName();
+            $instance = new ThePluginName();
         }
 
         return $instance;
@@ -207,10 +207,10 @@ final class PluginName {
      */
     public function includes() {
         if ( $this->is_request( 'admin' ) ) {
-            $this->container['admin_menu'] = new RexTheme\PluginName\Admin\Menu();
+            $this->container['admin_menu'] = new RexTheme\ThePluginName\Admin\Menu();
         }
 
-        $this->container['rest_api'] = new RexTheme\PluginName\REST\Api();
+        $this->container['rest_api'] = new RexTheme\ThePluginName\REST\Api();
     }
 
     /**
@@ -241,7 +241,7 @@ final class PluginName {
      */
     public function init_classes() {
         // Init necessary hooks
-        new RexTheme\PluginName\Hooks\Common();
+        new RexTheme\ThePluginName\Hooks\Common();
     }
 
     /**
@@ -315,10 +315,10 @@ final class PluginName {
  *
  * @since 1.0.0
  *
- * @return \PluginName|bool
+ * @return \ThePluginName|bool
  */
-function plugin_name() {
-    return PluginName::init();
+function the_plugin_name() {
+    return ThePluginName::init();
 }
 
 /*
@@ -326,4 +326,4 @@ function plugin_name() {
  *
  * @since 1.0.0
  */
-plugin_name();
+the_plugin_name();

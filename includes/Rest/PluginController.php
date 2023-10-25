@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\REST;
+namespace RexTheme\ThePluginName\REST;
 
 use RexTheme\PluginName\Abstracts\RESTController;
 use WP_REST_Request;

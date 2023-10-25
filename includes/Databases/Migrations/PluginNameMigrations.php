@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\Databases\Migrations;
+namespace RexTheme\ThePluginName\Databases\Migrations;
 
 use RexTheme\PluginName\Abstracts\DBMigrator;
 
@@ -23,7 +23,7 @@ class PluginNameMigration extends DBMigrator {
         $charset_collate = $wpdb->get_charset_collate();
 
         $schema_jobs = "CREATE TABLE IF NOT EXISTS `{$wpdb->plugin_name}` (
-            
+
         ) $charset_collate";
 
         // Create the tables.

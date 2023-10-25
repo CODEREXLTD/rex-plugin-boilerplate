@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\Common;
+namespace RexTheme\ThePluginName\Common;
 
 /**
  * Manage all key strings.

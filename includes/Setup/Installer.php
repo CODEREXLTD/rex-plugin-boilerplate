@@ -1,7 +1,7 @@
 <?php
-namespace RexTheme\PluginName\Setup;
+namespace RexTheme\ThePluginName\Setup;
 
-use RexTheme\PluginName\Common\Keys;
+use RexTheme\ThePluginName\Common\Keys;
 
 
 class Installer {

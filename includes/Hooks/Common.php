@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\Hooks;
+namespace RexTheme\ThePluginName\Hooks;
 
 /**
  * Class Common

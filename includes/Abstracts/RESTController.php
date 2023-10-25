@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\Abstracts;
+namespace RexTheme\ThePluginName\Abstracts;
 
 use WP_REST_Controller;
 

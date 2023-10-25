@@ -1,10 +1,10 @@
 <?php
 
-namespace RexTheme\PluginName\Admin;
+namespace RexTheme\ThePluginName\Admin;
 
 
 
-use RexTheme\PluginName\Assets\LoadAssets;
+use RexTheme\ThePluginName\Assets\LoadAssets;
 
 class Menu {
 

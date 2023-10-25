@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\PluginName\Assets;
+namespace RexTheme\ThePluginName\Assets;
 
 use Exception;
 
@@ -35,9 +35,9 @@ class Vite
      * @param null $version
      * @param bool $inFooter
      * @return Vite
-     * 
+     *
      * @throws Exception If dev mode is on and file not found in manifest
-     * 
+     *
      */
     private function enqueueScript($handle, $src, $dependency = [], $version = null, $inFooter = false)
     {
@@ -82,7 +82,7 @@ class Vite
         } else {
             $srcPath = static::getDevPath() . $src;
         }
-    
+
         wp_enqueue_style(
             $handle,
             $srcPath,
