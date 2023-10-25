@@ -194,7 +194,7 @@ final class ThePluginName {
      * @return void
      */
     private function install() {
-        $installer = new RexTheme\PluginName\Setup\Installer();
+        $installer = new RexTheme\ThePluginName\Setup\Installer();
         $installer->run();
     }
 
