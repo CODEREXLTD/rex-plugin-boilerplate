@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Coding Standards for WP React Kit">
-    <description>Generally-applicable sniffs for WordPress plugins.</description>
+<ruleset name="The Plugin Name ruleset">
+    <description>Generally-applicable sniffs for The Plugin Name.</description>
 
     <!-- What to scan -->
     <file>.</file>
@@ -40,6 +40,17 @@
             <property name="text_domain" type="array" value="the-plugin-name-text-domain"/>
         </properties>
     </rule>
+	<!--Naming Conventions: prefix everything in the global namespace-->
+	<!--https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#properties-strongly-recommended-to-be-set-->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="ThePluginName"/>
+				<element value="_THE_PLUGIN_NAME"/>
+				<element value="the_plugin_name"/>
+			</property>
+		</properties>
+	</rule>
     <rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
         <properties>
             <property name="blank_line_check" value="true"/>
