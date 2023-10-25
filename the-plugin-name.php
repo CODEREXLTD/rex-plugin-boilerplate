@@ -317,7 +317,7 @@ final class ThePluginName {
  *
  * @return \ThePluginName|bool
  */
-function the_plugin_name() {
+function the_plugin_name_main_function() {
     return ThePluginName::init();
 }
 
@@ -326,4 +326,4 @@ function the_plugin_name() {
  *
  * @since 1.0.0
  */
-the_plugin_name();
+the_plugin_name_main_function();
