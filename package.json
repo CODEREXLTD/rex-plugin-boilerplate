@@ -17,8 +17,7 @@
     "production": "npm run build",
     "test:php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/rex_plugin_boilerplate/phpunit.xml.dist --verbose'",
     "test:watch": "npm run composer test:watch",
-    "composer": "wp-env run cli --env-cwd=wp-content/plugins/rex_plugin_boilerplate composer",
-    "test:e2e:playwright": "wp-scripts test-playwright --config tests/e2e/playwright.config.ts"
+    "composer": "wp-env run cli --env-cwd=wp-content/plugins/rex_plugin_boilerplate composer"
   },
   "dependencies": {
     "@wordpress/components": "^25.10.0",
@@ -45,6 +44,15 @@
     "babel-plugin-component": "^1.1.1",
     "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.3",
+	"grunt": "^1.5.3",
+	"grunt-contrib-clean": "^1.0.0",
+	"grunt-contrib-compress": "^1.6.0",
+	"grunt-contrib-concat": "^1.0.1",
+	"grunt-contrib-copy": "^1.0.0",
+	"grunt-contrib-watch": "^1.1.0",
+	"grunt-run": "^0.8.0",
+	"grunt-wp-readme-to-markdown": "^2.0.1",
+	"grunt-wpvue-i18n": "^1.0.0",
     "postcss": "^8.3.5",
     "prettier": "^3.0.3",
     "resolve-url-loader": "^5.0.0",
