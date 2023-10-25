@@ -34,12 +34,14 @@
     <rule ref="WordPress">
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
     </rule>
-    <rule ref="WordPress.WP.I18n">
-        <properties>
-            <!-- Value: replace the text domain used. -->
-            <property name="text_domain" type="array" value="the-plugin-name-text-domain"/>
-        </properties>
-    </rule>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="the-plugin-name-text-domain"/>
+				<element value="library-textdomain"/>
+			</property>
+		</properties>
+	</rule>
 	<!--Naming Conventions: prefix everything in the global namespace-->
 	<!--https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#properties-strongly-recommended-to-be-set-->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
