@@ -159,8 +159,8 @@ module.exports = function(grunt) {
 						type: 'wp-plugin',
 						updateTimestamp: true,
 						potHeaders: {
-							'report-msgid-bugs-to': 'https://getwpfunnels.com/',
-							'language-team': 'LANGUAGE <EMAIL@ADDRESS>',
+							'report-msgid-bugs-to': '{{plugin_url}}',
+							'language-team': 'LANGUAGE <{{author_email}}>',
 							poedit: true,
 							'x-poedit-keywordslist': true
 						}
