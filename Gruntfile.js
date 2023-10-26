@@ -91,6 +91,7 @@ module.exports = function(grunt) {
 					'!.php_cs',
 					'!appspec.yml.php',
 					'!codeception.dist.yml',
+					'!phpcs.xml',
 					'!prettier.config.js',
 					'!.eslintrc.js',
 					'!sonar-project.properties',

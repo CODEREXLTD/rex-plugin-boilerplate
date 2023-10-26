@@ -2,7 +2,7 @@
 
 namespace RexTheme\ThePluginName\REST;
 
-use RexTheme\PluginName\Abstracts\RESTController;
+use RexTheme\ThePluginName\Abstracts\RESTController;
 use WP_REST_Request;
 use WP_REST_Response;
 use WP_REST_Server;
