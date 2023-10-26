@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		addtextdomain: {
 			options: {
-				textdomain: '{{the-plugin-name-text-domain}}'
+				textdomain: 'the-plugin-name-text-domain'
 			},
 			update_all_domains: {
 				options: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 					],
 					mainFile: '{{the-plugin-name}}.php',
 					domainPath: '/languages/',
-					potFilename: '{{the-plugin-name-text-domain}}.pot',
+					potFilename: 'the-plugin-name-text-domain.pot',
 					type: 'wp-plugin',
 					updateTimestamp: true,
 					potHeaders: {
@@ -153,9 +153,9 @@ module.exports = function(grunt) {
 							'tests/*',
 							'bin/*'
 						],
-						mainFile: 'checkoutify.php',
+						mainFile: '{{the-plugin-name}}.php',
 						domainPath: '/languages/',
-						potFilename: 'checkoutify.pot',
+						potFilename: 'the-plugin-name-text-domain.pot',
 						type: 'wp-plugin',
 						updateTimestamp: true,
 						potHeaders: {
