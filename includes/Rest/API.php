@@ -31,7 +31,7 @@ class Api {
         $this->class_map = apply_filters(
             'plugin_name_rest_api_class_map',
             [
-                \RexTheme\PluginName\REST\PluginController::class,
+                \RexTheme\ThePluginName\REST\PluginController::class,
             ]
         );
 

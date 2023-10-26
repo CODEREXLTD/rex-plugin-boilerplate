@@ -27,4 +27,6 @@
 			<directory suffix=".php">inc</directory>
 		</include>
 	</coverage>
+
+
 </phpunit>
