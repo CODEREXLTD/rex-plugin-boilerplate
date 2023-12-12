@@ -32,7 +32,7 @@ final class ThePluginName {
      *
      * @since 1.0.0
      */
-    const SLUG = 'plugin_name_slug';
+    const SLUG = '{{plugin_name_slug}}';
 
     /**
      * Holds various class instances.

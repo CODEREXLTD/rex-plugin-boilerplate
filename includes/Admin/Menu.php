@@ -2,8 +2,6 @@
 
 namespace RexTheme\ThePluginName\Admin;
 
-
-
 use RexTheme\ThePluginName\Assets\LoadAssets;
 
 class Menu {
