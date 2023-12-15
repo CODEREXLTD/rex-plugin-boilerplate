@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\RexDynamicDiscount\Assets;
+namespace RexTheme\ThePluginName\Assets;
 
 /**
  * Load assets class
@@ -40,9 +40,9 @@ class LoadAssets {
 	 */
 	public function get_styles(): array {
 		return [
-			'rex-dynamic-discount-css' => [
-				'src'     => REX_DYNAMIC_DISCOUNT_BUILD . '/index.css',
-				'version' => REX_DYNAMIC_DISCOUNT_VERSION,
+			'{{the-project-name}}-css' => [
+				'src'     => _PLUGIN_NAME_BUILD . '/index.css',
+				'version' => _PLUGIN_NAME_VERSION,
 				'deps'    => [],
 			],
 		];
@@ -56,11 +56,11 @@ class LoadAssets {
 	 * @return array
 	 */
 	public function get_scripts(): array {
-		$dependency = require_once REX_DYNAMIC_DISCOUNT_DIR . '/build/index.asset.php';
+		$dependency = require_once _PLUGIN_NAME_DIR . '/build/index.asset.php';
 
 		return [
-			'rex-dynamic-discount-app' => [
-				'src'       => REX_DYNAMIC_DISCOUNT_BUILD . '/index.js',
+			'{{the-project-name}}-app' => [
+				'src'       => _PLUGIN_NAME_BUILD . '/index.js',
 				'version'   => $dependency['version'],
 				'deps'      => $dependency['dependencies'],
 				'in_footer' => true,
@@ -107,7 +107,7 @@ class LoadAssets {
 			return;
 		}
 
-		wp_enqueue_style( 'rex-dynamic-discount-css' );
-		wp_enqueue_script( 'rex-dynamic-discount-app' );
+		wp_enqueue_style( '{{the-project-name}}-css' );
+		wp_enqueue_script( '{{the-project-name}}-app' );
 	}
 }
