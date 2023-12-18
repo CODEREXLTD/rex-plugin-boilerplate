@@ -45,6 +45,7 @@ class Menu {
 	 * @return void
 	 */
 	public function plugin_page() {
+		new LoadAssets();
 		require_once _PLUGIN_NAME_TEMPLATE_PATH . '/app.php';
 	}
 }
