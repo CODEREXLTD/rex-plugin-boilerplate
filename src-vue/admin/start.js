@@ -10,7 +10,7 @@ const framework = new WPPluginVueTailwind();
 
 framework.app.config.globalProperties.appVars = window.WPPluginVueTailwindAdmin;
 
-window.WPPluginVueTailwindApp = framework.app.use(router).mount('#plugin_name');
+window.WPPluginVueTailwindApp = framework.app.use(router).mount('#{{the-plugin-name}}');
 
 router.afterEach((to, from) => {
     jQuery('.WPWVT_menu_item').removeClass('active');

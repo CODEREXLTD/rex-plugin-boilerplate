@@ -13,7 +13,7 @@ import './style/tailwind.css';
 import './style/main.scss';
 
 // Render the App component into the DOM
-const dynamicPricingElement = document.getElementById('rex-dynamic-discount');
+const dynamicPricingElement = document.getElementById('{{the-plugin-name}}');
 
 if (dynamicPricingElement) {
 	render(<App />, dynamicPricingElement);
