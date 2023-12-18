@@ -103,7 +103,7 @@ class LoadAssets {
 	 * @return void
 	 */
 	public function enqueue_admin_assets() {
-		if ( ! is_admin() || ! isset( $_GET['page'] ) || sanitize_text_field( wp_unslash( $_GET['page'] ) ) !== 'rex-dynamic-discount' ) {
+		if ( ! is_admin() || ! isset( $_GET['page'] ) || sanitize_text_field( wp_unslash( $_GET['page'] ) ) !== '{{the-plugin-name}}' ) {
 			return;
 		}
 
