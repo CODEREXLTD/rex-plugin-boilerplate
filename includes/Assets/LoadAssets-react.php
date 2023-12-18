@@ -40,7 +40,7 @@ class LoadAssets {
 	 */
 	public function get_styles(): array {
 		return [
-			'{{the-project-name}}-css' => [
+			'{{the-plugin-name}}-css' => [
 				'src'     => _PLUGIN_NAME_BUILD . '/index.css',
 				'version' => _PLUGIN_NAME_VERSION,
 				'deps'    => [],
@@ -59,7 +59,7 @@ class LoadAssets {
 		$dependency = require_once _PLUGIN_NAME_DIR . '/build/index.asset.php';
 
 		return [
-			'{{the-project-name}}-app' => [
+			'{{the-plugin-name}}-app' => [
 				'src'       => _PLUGIN_NAME_BUILD . '/index.js',
 				'version'   => $dependency['version'],
 				'deps'      => $dependency['dependencies'],
@@ -107,7 +107,7 @@ class LoadAssets {
 			return;
 		}
 
-		wp_enqueue_style( '{{the-project-name}}-css' );
-		wp_enqueue_script( '{{the-project-name}}-app' );
+		wp_enqueue_style( '{{the-plugin-name}}-css' );
+		wp_enqueue_script( '{{the-plugin-name}}-app' );
 	}
 }

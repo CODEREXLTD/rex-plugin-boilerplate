@@ -1,5 +1,5 @@
 {
-  "name": "{{the-project-name}}",
+  "name": "{{the-plugin-name}}",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

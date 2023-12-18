@@ -6,7 +6,7 @@ class LoadAssets
 {
     public function admin()
     {
-        Vite::enqueueScript('{{the-project-name}}', 'admin/start.js', array('jquery'), _PLUGIN_NAME_VERSION, true);
+        Vite::enqueueScript('{{the-plugin-name}}', 'admin/start.js', array('jquery'), _PLUGIN_NAME_VERSION, true);
     }
 
 }
