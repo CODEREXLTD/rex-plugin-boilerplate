@@ -15,9 +15,9 @@
     "watch": "npm run dev",
     "build": "node src/env/production_mode.js && vite build",
     "production": "npm run build",
-    "test:php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/{{the-project-name}}/phpunit.xml.dist --verbose'",
+    "test:php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/{{the-plugin-name}}/phpunit.xml.dist --verbose'",
     "test:watch": "npm run composer test:watch",
-    "composer": "wp-env run cli --env-cwd=wp-content/plugins/{{the-project-name}} composer",
+    "composer": "wp-env run cli --env-cwd=wp-content/plugins/{{the-plugin-name}} composer",
 	"test:e2e:playwright": "wp-scripts test-playwright --config tests/e2e/playwright.config.ts",
 	"test:e2e:playwright:ui": "wp-scripts test-playwright --ui --config tests/e2e/playwright.config.ts",
 	"test:e2e": "wp-scripts test-e2e"
