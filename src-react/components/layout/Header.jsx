@@ -21,7 +21,7 @@ function Header() {
 							onClick={() => {}}
 							className="text-gray-900 font-medium text-lg focus:outline-none focus:shadow-none"
 						>
-							<span className="text-primary">Rex Dynamic Discount</span>
+							<span className="text-primary">React Plugin Boilerplate</span>
 						</Link>
 					</div>
 					<div className="flex items-center mb-1">

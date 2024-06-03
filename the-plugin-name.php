@@ -210,7 +210,7 @@ final class ThePluginName {
             $this->container['admin_menu'] = new RexTheme\ThePluginName\Admin\Menu();
         }
 		$this->container['assets']   = new RexTheme\ThePluginName\Assets\LoadAssets();
-        $this->container['rest_api'] = new RexTheme\ThePluginName\REST\Api();
+        $this->container['rest_api'] = new RexTheme\ThePluginName\Rest\Api();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace RexTheme\ThePluginName\REST;
+namespace RexTheme\ThePluginName\Rest;
 
 /**
  * API Manager class.

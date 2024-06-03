@@ -33,7 +33,7 @@ const config = defineConfig( {
 				 * Headless webkit won't receive dataTransfer with custom types in the
 				 * drop event on Linux. The solution is to use `xvfb-run` to run the tests.
 				 * ```sh
-				 * xvfb-run npm run test:e2e:playwright
+				 * xvfb-run npm run test:e2e
 				 * ```
 				 * See `.github/workflows/end2end-test-playwright.yml` for advanced usages.
 				 */
@@ -49,12 +49,6 @@ const config = defineConfig( {
 			grepInvert: /-firefox/,
 		},
 	],
-	/* Run your local dev server before starting the tests */
-	webServer: {
-		command: 'npm run env:start',
-		url: 'http://localhost:8889',
-		reuseExistingServer: !process.env.CI,
-	},
 } );
 
 export default config;
