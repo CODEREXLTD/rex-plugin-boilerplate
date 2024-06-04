@@ -12,7 +12,7 @@ jobs:
   release:
     name: Create Weekly Release
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/release'
+    if: github.ref == 'refs/heads/develop' || github.event_name == 'workflow_dispatch'
 
     steps:
       - name: Checkout repository
