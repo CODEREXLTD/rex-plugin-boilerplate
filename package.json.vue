@@ -15,12 +15,14 @@
     "watch": "npm run dev",
     "build": "node src/env/production_mode.js && vite build",
     "production": "npm run build",
+	"build:plugin-zip": "bash ./bin/build-plugin-zip.sh",
     "test:php": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/{{the-plugin-name}}/phpunit.xml.dist --verbose'",
     "test:watch": "npm run composer test:watch",
     "composer": "wp-env run cli --env-cwd=wp-content/plugins/{{the-plugin-name}} composer",
-	"test:e2e:playwright": "wp-scripts test-playwright --config tests/e2e/playwright.config.ts",
+	"test:e2e": "wp-scripts test-playwright --config tests/e2e/playwright.config.ts",
+	"test:e2e:playwright": "npm run test:e2e",
 	"test:e2e:playwright:ui": "wp-scripts test-playwright --ui --config tests/e2e/playwright.config.ts",
-	"test:e2e": "wp-scripts test-e2e"
+	"test:e2e:watch": "npm run test:e2e -- --watch"
   },
   "dependencies": {
     "@wordpress/components": "^25.10.0",

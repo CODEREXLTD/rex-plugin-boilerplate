@@ -1,0 +1,44 @@
+name: Weekly Release
+
+on:
+  schedule:
+    - cron: '0 17 * * 5'
+  workflow_dispatch:
+  push:
+    branches:
+      - release
+
+jobs:
+  release:
+    name: Create Weekly Release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/release'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Ensure full history is fetched
+
+      - name: Use desired version of NodeJS
+        uses: actions/setup-node@5b52f097d36d4b0b2f94ed6de710023fbb8b2236 # v3.1.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Grant execute permissions for build script
+        run: chmod +x ./bin/build-plugin-zip.sh
+
+      - name: Generate plugin zip file
+        run: ./bin/build-plugin-zip.sh -b
+
+      - name: Upload build file as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: the-plugin-name
+          path: ./the-plugin-name.zip
