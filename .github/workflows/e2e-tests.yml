@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - develop
+      - master
+      - 'release/**'
+      - 'rc/**'
 
 # Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
@@ -31,6 +34,15 @@ jobs:
           node-version-file: '.nvmrc'
           cache: npm
 
+      - name: Cache Node.js modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Npm install and build
         run: |
           npm ci
@@ -41,13 +53,21 @@ jobs:
         with:
           php-version: '8.0'
 
-      # Since Composer dependencies are installed using `composer update` and no lock file is in version control,
-      # passing a custom cache suffix ensures that the cache is flushed at least once per week.
-      - name: Install Composer dependencies
-        uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
+      - name: Get Composer Cache Directory
+        id: composer-cache-dir
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache PHP Dependencies
+        id: composer-cache
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
-          custom-cache-suffix: $(/bin/date -u --date='last Mon' "+%F")
-          composer-options: '--no-dev'
+          path: ${{ steps.composer-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-composer-7.2-${{ hashFiles('composer.lock') }}
+
+      - name: Install PHP Dependencies
+        run: |
+          composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
       - name: Install Playwright dependencies
         run: |
