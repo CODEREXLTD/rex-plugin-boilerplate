@@ -1,132 +1,89 @@
 <?xml version="1.0"?>
-<ruleset name="The Plugin Name ruleset">
-    <description>Generally-applicable sniffs for The Plugin Name.</description>
+<ruleset name="WordPress Coding Standards">
+	<arg name="colors" />
+	<arg value="ps" />
+	<arg name="basepath" value="." />
+	<arg name="parallel" value="50" />
+	<arg name="extensions" value="php" />
 
-    <!-- What to scan -->
-    <file>.</file>
-    <exclude-pattern>*/assets/*</exclude-pattern>
-    <exclude-pattern>*/src/*</exclude-pattern>
-    <exclude-pattern>*/build/*</exclude-pattern>
-    <exclude-pattern>*/node_modules/*</exclude-pattern>
-    <exclude-pattern>*/vendor/*</exclude-pattern>
-    <exclude-pattern>*/tests/*</exclude-pattern>
+	<!-- Lint all PHP files by default. -->
+	<file>includes</file>
 
-    <!-- How to scan -->
-    <!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
-    <!-- Annotated ruleset: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-    <arg value="sp"/> <!-- Show sniff and progress -->
-    <arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
-    <arg name="colors"/>
-    <arg name="extensions" value="php"/>
-    <arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
+	<!-- Ensure all PHP code is compatible with PHP 7.4 and higher. -->
+	<rule ref="PHPCompatibilityWP" />
+	<config name="testVersion" value="7.4-"/>
 
-    <!-- Rules: Check PHP version compatibility -->
-    <!-- https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions -->
-    <config name="testVersion" value="7.3-"/>
-    <!-- https://github.com/PHPCompatibility/PHPCompatibilityWP -->
-    <rule ref="PHPCompatibilityWP"/>
+	<rule ref="WordPress" />
 
-    <!-- Rules: WordPress Coding Standards -->
-    <!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
-    <!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
-    <config name="minimum_supported_wp_version" value="5.8"/>
-    <rule ref="WordPress-Core"/>
-    <rule ref="WordPress">
-        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
-    </rule>
+	<!-- Require prepared SQL statements. -->
+	<rule ref="WordPress.DB.PreparedSQL" />
+	<rule ref="WordPress.DB.PreparedSQLPlaceholders" />
+
+	<!-- Disallow empty statements. -->
+	<rule ref="Generic.CodeAnalysis.EmptyStatement" />
+
+	<!-- Require correct usage of WP's i18n functions. -->
 	<rule ref="WordPress.WP.I18n">
-		<properties>
-			<property name="text_domain" type="array">
-				<element value="the-plugin-name-text-domain"/>
-				<element value="library-textdomain"/>
-			</property>
-		</properties>
+		<!-- Allow empty strings to be translated (e.g. space character) -->
+		<exclude name="WordPress.WP.I18n.NoEmptyStrings" />
 	</rule>
-	<!--Naming Conventions: prefix everything in the global namespace-->
-	<!--https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#properties-strongly-recommended-to-be-set-->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<properties>
-			<property name="prefixes" type="array">
-				<element value="ThePluginName"/>
-				<element value="_THE_PLUGIN_NAME"/>
-				<element value="the_plugin_name"/>
-			</property>
-		</properties>
-	</rule>
-    <rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
-        <properties>
-            <property name="blank_line_check" value="true"/>
-        </properties>
-    </rule>
 
-    <rule ref="Squiz.Commenting">
-        <severity>0</severity>
-    </rule>
-    <rule ref="PEAR.Functions.FunctionCallSignature.MultipleArguments">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Generic.Commenting.DocComment.SpacingBeforeTags">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.Files.FileName">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.PHP.DevelopmentFunctions">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Generic.Formatting.MultipleStatementAlignment.NotSameWarning">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Generic.Commenting.DocComment.MissingShort">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.PHP.YodaConditions.NotYoda">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterCloseParenthesis">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound">
-        <type>warning</type>
-    </rule>
-    <rule ref="WordPress.DB.DirectDatabaseQuery.NoCaching">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.PHP.StrictInArray.MissingTrueStrict">
-        <type>error</type>
-    </rule>
-    <rule ref="WordPress.PHP.StrictComparisons.LooseComparison">
-        <type>error</type>
-    </rule>
-    <rule ref="WordPress.DB.DirectDatabaseQuery.DirectQuery">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.DB.PreparedSQL.NotPrepared">
-        <type>warning</type>
-    </rule>
-    <rule ref="WordPress.Security.EscapeOutput.OutputNotEscaped">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.PHP.DevelopmentFunctions.error_log_var_export">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Generic.Arrays.DisallowShortArraySyntax">
-        <severity>0</severity>
-    </rule>
-    <rule ref="WordPress.Security.ValidatedSanitizedInput">
-        <properties>
-            <property name="customSanitizingFunctions" type="array">
-                <element value="wc_clean"/>
-            </property>
-        </properties>
-    </rule>
+	<!-- Disallow "development" functions like var_dump/print_r/phpinfo -->
+	<rule ref="WordPress.PHP.DevelopmentFunctions">
+		<!-- Allow triggering errors for reporting purposes. -->
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_error_log" />
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error" />
+
+		<!-- Allow overriding the error handler. -->
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_set_error_handler" />
+
+		<!-- Allow changing error level. -->
+		<exclude name="WordPress.PHP.DevelopmentFunctions.prevent_path_disclosure_error_reporting" />
+
+		<!-- Allow backtraces. -->
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_debug_backtrace" />
+		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_wp_debug_backtrace_summary" />
+
+		<!-- Set remaining to errors. -->
+		<type>error</type>
+	</rule>
+
+	<!-- Require valid syntax. -->
+	<rule ref="Generic.PHP.Syntax" />
+
+	<!-- Require proper docblocks be used in all PHP files -->
+	<rule ref="WordPress-Docs">
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
+		<exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop" />
+		<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />
+
+		<!-- Commenting hygiene is nice, but this excludes too many valid comment syntaxes. -->
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+	</rule>
+
+	<!-- disable nonce checks on tests -->
+	<rule ref="WordPress.Security.NonceVerification">
+		<exclude-pattern>tests/*.php</exclude-pattern>
+		<exclude-pattern>tests/providers/*.php</exclude-pattern>
+	</rule>
+
+	<!-- Enforce camel case for class names -->
+	<rule ref="PEAR.NamingConventions.ValidClassName.Invalid">
+		<exclude-pattern>/phpunit/*</exclude-pattern>
+	</rule>
+
+	<!-- Ignore filename error since it requires WP core build process change -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>/includes/*</exclude-pattern>
+	</rule>
+
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>/includes/*</exclude-pattern>
+	</rule>
+
+	<exclude-pattern>*/wordpress/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
 </ruleset>
